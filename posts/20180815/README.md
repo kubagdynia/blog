@@ -1,4 +1,4 @@
-![](D:\Dev\blog\posts\20180815\img\lazarustinyradioplayer.jpg)
+![](./img/lazarustinyradioplayer.jpg)
 
 # Tiny Radio Player #01 – Introduction
 
@@ -16,11 +16,11 @@ After launching Lazarus, I suggest changing the IDE language to English since al
 
 To create a new project, click **File -> New...** and choose **Project -> Application**.
 
-![](D:\Dev\blog\posts\20180815\img\001LazarusNewProject.jpg)
+![](./img/001LazarusNewProject.jpg)
 
 Next, change the name of the main form from **Form1** to **MainForm** (Name parameter).
 
-![](D:\Dev\blog\posts\20180815\img\002LazarusChangeNameOfMainForm.jpg)
+![](./img/002LazarusChangeNameOfMainForm.jpg)
 
 We also change the caption of the main form to Tiny Radio Player (**Caption** parameter), which will be displayed as the application's description. Additionally, we change the position of the main window to **poScreenCenter** (**Position** parameter). After this change, if we run the application, it will be displayed in the center of the screen.
 
@@ -36,8 +36,12 @@ Go to the project options **Project -> Project Options...** and navigate to the 
 **Unit output directory (-FU):** *../compiled/$(TargetCPU)-$(TargetOS)*
 **Target file name (-o):** *../bin/$(TargetCPU)-$(TargetOS)/TinyRadioPlayer*
 
-![](D:\Dev\blog\posts\20180815\img\003LazarusCompilerOptionsPaths.jpg)
+![](./img/003LazarusCompilerOptionsPaths.jpg)
 
 If clicking **[OK]** displays a message about a missing directory, click **Ignore**.
 
 Now it's time to save the project. We click **File -> Save All**. Then we create a directory named **TinyRadioPlayer** and inside it a directory named **source**. We change the file name to **TinyRadioPlayer.lpi**. We click **Save** and proceed to the next step, where we change the name of the main form file from **unit1.pas** to **MainFormUnit.pas** and click **Save** again.
+
+The entire project is saved, so we can run it. We do this by pressing the **F9** key or from the menu by selecting **Run -> Run** or simply clicking on the Play icon.
+
+If a message about a missing directory appears during launch, click **Create it**.
