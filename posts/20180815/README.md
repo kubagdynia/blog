@@ -45,3 +45,49 @@ Now it's time to save the project. We click **File -> Save All**. Then we create
 The entire project is saved, so we can run it. We do this by pressing the **F9** key or from the menu by selecting **Run -> Run** or simply clicking on the Play icon.
 
 If a message about a missing directory appears during launch, click **Create it**.
+
+## Compilation Modes
+
+The last thing worth doing before starting to create the application is setting the compilation modes. The default mode will be **Debug**. It will not contain any optimizations, and additionally, we will enable memory leak analysis (since there's no **garbage collector**, it's better to be safe than sorry). The second mode will be the **Release** mode, which will be optimized for production release. Moreover, in Release mode, the output file will be smaller than in Debug mode.
+
+We go to the project compilation options **Project -> Project Options… -> Compiler Options** and click on the button with three dots next to **Build modes**.
+
+![](./img/005LazarusBuildModes.jpg)
+
+In the newly opened window, click the button **Create Debug and Release modes**. The result of this operation should be the addition of two new modes, **Debug** and **Release**. The Default mode can be removed. If the Create Debug and Release modes button is not visible, then do it manually by changing the name of Default to Debug and adding another mode named Release.
+
+![](./img/006LazarusNewBuildModes.jpg)
+
+Click the **[OK]** button and go to the **Compiler Options -> Compilation and Linking** section. Make sure that the active mode is **Debug** and change the Optimization levels to 0 (no optimization).
+
+![](./img/007LazarusBuildModeCompilationAndLinkingDebug.jpg)
+
+Switch the compilation mode to **Release** and change the **Optimization levels** to 3 (-O2 + slow optimization) (-O3), **Unit style** to Smart linkable (-CX), and **Linking** to Link smart (-XX).
+
+![](./img/008LazarusBuildModeCompilationAndLinkingRelease.jpg)
+
+Now we move to the **Compiler Options -> Debugging** section, change the compilation mode to **Debug**, and enter the settings shown below.
+
+![](./img/009LazarusBuildModeDebuggingDebug.jpg)
+
+In **Release** mode, all options should be unchecked. Click the **[OK]** button to finish the configuration.
+
+Let's now try out the two new compilation modes. We do this by selecting the appropriate mode:
+
+![](./img/010LazarusChooseBuildMode.jpg)
+
+After selecting **Debug** or **Release**, press **F9** (to run the application) or **Ctrl + F9** (to compile only). The output files (available in TinyRadioPlayer/bin/i386-win32/) currently do not differ much in size because our project is still empty. **Tip**: clicking the compilation mode gear icon will take us directly to the compilation options configuration.
+
+## To conclude
+
+Everything works correctly, but what kind of application example would it be if it doesn't end with displaying Hello World! To do this, press the F12 key and switch to the design view of our main form. Using the F12 key, we can toggle between the form view and the code (the same operation can be done from the menu by clicking View -> Toggle Form/Unit View). Alright, now all that's left is to select the **Standard** tab and the **TLabel** control from the controls visible at the top, then click on our form and change the **Caption** property of the TLabel control to **Hello World!**
+
+![](./img/011LazarushelloWorld.jpg)
+
+And here is the final result.
+
+![](./img/012LazarushelloWorldFinal.jpg)
+
+The entire application code is available on [GitHub](https://github.com/kubagdynia/TinyRadioPlayer). Changes related only to this post can be found [here](https://github.com/kubagdynia/TinyRadioPlayer/releases/tag/01Lazarus).
+
+Bye and see you soon…
